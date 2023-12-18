@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfeff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Add space between form and output */
+        }
+
+        form {
+            background-color: #fdfeff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200%; /* Make the form wider for better mobile experience */
+            max-width: 400px; /* Set a maximum width */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px; /* Add space between label and input */
+        }
+
+        input {
+            width: 100%; /* Adjusted width for better responsiveness */
+            padding: 6px; /* Smaller padding */
+            box-sizing: border-box;
+            border-radius: 10px; /* Adjusted border-radius */
+            margin-bottom: 10px; /* Add space between input boxes */
+        }
+
+        button {
+            background-color: #000000; /* Updated background color */
+            border-radius: 10px; /* Adjusted border-radius */
+            color: #f4f3f3;
+            padding: 1px;
+            border: none;
+            cursor: pointer;
+            width: 100%; /* Adjusted width for better responsiveness */
+            height: 40px; /* Fixed height */
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            max-width: 80px; /* Set the maximum width of the logo */
+            margin-bottom: 10px; /* Add space between logo and form */
+        }
+
+        h3 {
+            margin-bottom: 20px; /* Add space between the logo and the heading */
+        }
+
+        #output {
+            background-color: #fdfeff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 48%; /* Make the output wider for better mobile experience */
+            max-width: 400px; /* Set a maximum width */
+            text-align: left; /* Align text content to the left */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="signupForm">
+        <img src="slogo.png" alt="Logo">
+        <h3>Create Your Account</h3>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="submitForm()">Sign Up</button>
+    </form>
+
+    <!-- Output div to display the entered data -->
+    <div id="output"></div>
+</div>
+
+<script>
+    function submitForm() {
+        // Get the values from input fields
+        var username = document.getElementById('username').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        // Display the values in the output div
+        var outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = '<img src="slogo.png" alt="Logo">' +
+                              '<h3>Registered Information</h3>' +
+                              '<p><strong>Username:</strong> ' + username + '</p>' +
+                              '<p><strong>Email:</strong> ' + email + '</p>' +
+                              '<p><strong>Password:</strong> ' + password + '</p>';
+    }
+</script>
+
+</body>
+</html>
